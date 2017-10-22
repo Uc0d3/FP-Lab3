@@ -1,14 +1,14 @@
 # Movie Renting
 
-### Ein Online-Shop möchte eine kleine Anwendung haben, wo es die Filme Bestellungen des Benutzer beobachten kann.
+#### Ein Online-Shop möchte eine kleine Anwendung haben, wo es die Filme Bestellungen des Benutzer beobachten kann.
 
-### Eine Bestellung von einer Benutzer kann mehrere Filme beinhalten, bzw. ein Film kann in einer Bestellung mehrmals erscheinen.
+#### Eine Bestellung von einer Benutzer kann mehrere Filme beinhalten, bzw. ein Film kann in einer Bestellung mehrmals erscheinen.
 
-### Jeder Benutzer hat Vorname, Nachname, und eine Liste von Bestellungen.
+#### Jeder Benutzer hat Vorname, Nachname, und eine Liste von Bestellungen.
 
-### Jeder Film hat ein Titel, ein Jahr (wenn der Film erschien), eine Wertung, eine Liste mit den Schauspielern und ein Preis.
+#### Jeder Film hat ein Titel, ein Jahr (wenn der Film erschien), eine Wertung, eine Liste mit den Schauspielern und ein Preis.
 
-### Die Anwendung sollte folgende Szenarien erreichen:
+#### Die Anwendung sollte folgende Szenarien erreichen:
 
 ## Menu Benutzer:
 * Fügen ein Benutzer hin;
