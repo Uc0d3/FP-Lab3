@@ -1,6 +1,6 @@
-class Film:
+class Movie:
 
-    def __init__(self, title, year, rating, price, actors):
+    def __init__(self, id, title, year, rating, price, actors):
         self.id = id
         self.title = title
         self.year = year
