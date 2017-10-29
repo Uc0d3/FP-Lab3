@@ -35,6 +35,32 @@ class UserRepository:
                 print("Corrupted user read, skipped")
         print("Users loaded from file")
 
+    def find_user(self, term, key=None):
+        found = []
+        for user in self.users:
+            if key is not None:
+                if term.lower() in str(getattr(user, key)).lower():
+                    found.append(user)
+            else:
+                members = [attr for attr in dir(user) if not callable(getattr(user, attr)) and not attr.startswith("__")]
+                for member in members:
+                    user_prop = str(getattr(user, member)).lower()
+                    if term.lower() in user_prop:
+                        found.append(user)
+                        break
+        if len(found) == 0:
+            print("No User Found")
+            return None
+        if len(found) == 1:
+            user = found[0]
+            print("Found User:" + str(user))
+            return user
+        print("Multiple user Found:")
+        for f_user in found:
+            print(f_user)
+        id = int(input("Please choose an id from the list above:"))
+        return(self.get_by_id(id))
+
     def __iter__(self):
         for user in self.users:
             yield user
