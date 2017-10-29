@@ -18,6 +18,13 @@ class UserController:
             user.update_lname(new_name)
             print("Name changed")
 
+    def delete_user(self):
+        search_term = input("Search Term:")
+        user = self.find_user(search_term)
+        if user is not None:
+            self.repo.delete_user(user)
+            print(str(user) + " DELETED")
+
     def find_user(self, term, key=None):
         found = []
         for user in self.repo:
@@ -41,5 +48,5 @@ class UserController:
         print("Multiple user Found:")
         for f_user in found:
             print(f_user)
-        id = int(input("Please choose an id from the list above"))
+        id = int(input("Please choose an id from the list above:"))
         return(self.repo.get_by_id(id))
