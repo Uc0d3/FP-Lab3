@@ -1,9 +1,9 @@
 class User:
 
     orders = []
+    id = 0
 
-    def __init__(self, id, f_name, l_name):
-        self.id = id
+    def __init__(self, f_name, l_name):
         self.f_name = f_name
         self.l_name = l_name
 
@@ -12,3 +12,6 @@ class User:
 
     def add_order(self, film_id):
         self.orders.append(film_id)
+
+    def set_id(self, id):
+        self.id = id

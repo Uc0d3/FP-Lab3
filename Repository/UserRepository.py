@@ -4,6 +4,7 @@ class UserRepository:
     last_id = 0
 
     def add_user(self, user):
+        user.set_id(self.last_id + 1)
         self.users.append(user)
         self.last_id += 1
 
@@ -14,3 +15,6 @@ class UserRepository:
         for user in self.users:
             if user["id"] == id:
                 return user
+
+    def get_list(self):
+        return self.users
