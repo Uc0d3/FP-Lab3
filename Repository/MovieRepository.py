@@ -3,6 +3,7 @@ class MovieRepository:
     movies = []
     last_id = 0
 
+
     def add_movie(self, movie):
         movie.set_id(self.last_id + 1)
         self.movies.append(movie)

@@ -1,4 +1,4 @@
-class Movieontroller:
+class MovieController:
 
     def __init__(self, repository):
         self.repo = repository
