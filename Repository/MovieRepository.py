@@ -14,5 +14,6 @@ class MovieRepository:
             if movie.id == id:
                 return movie
 
-    def get_list(self):
-        return self.movies
+    def __iter__(self):
+        for movie in self.movies:
+            yield movie

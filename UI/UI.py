@@ -7,6 +7,8 @@ class UI:
     menu = """
 1 - Add User
 2 - Add Movie
+3 - Show Users
+4 - Show Movies
 Option:
     """.strip()
 
@@ -29,8 +31,9 @@ Option:
         rating = float(input("Rating:"))
         price = float(input("Price:"))
         actors = input("Actors (comma separated):")
+        actors = actors.strip()
         actors = actors.split(",")
-
+        actors = map(str.strip, actors)
         movie = Movie(title, year, rating, price, actors)
         return movie
 
@@ -43,3 +46,7 @@ Option:
             if op == 2:
                 movie = self.read_movie()
                 self.movie_c.add_movie(movie)
+            if op == 3:
+                self.user_c.print_users()
+            if op == 4:
+                self.movie_c.print_movies()

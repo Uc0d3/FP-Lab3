@@ -16,5 +16,6 @@ class UserRepository:
             if user["id"] == id:
                 return user
 
-    def get_list(self):
-        return self.users
+    def __iter__(self):
+        for user in self.users:
+            yield user

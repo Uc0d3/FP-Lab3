@@ -15,3 +15,7 @@ class User:
 
     def set_id(self, id):
         self.id = id
+
+    def __str__(self):
+        string = "Id:%d\tFirst Name:%s\tLast Name:%s\tOrders:%s"
+        return string % (self.id, self.f_name, self.l_name, ", ".join(self.orders))
