@@ -9,6 +9,7 @@ class UI:
 2 - Add Movie
 3 - Show Users
 4 - Show Movies
+5 - Update First Name
 Option:
     """.strip()
 
@@ -50,3 +51,5 @@ Option:
                 self.user_c.print_users()
             if op == 4:
                 self.movie_c.print_movies()
+            if op == 5:
+                self.user_c.change_lname()
