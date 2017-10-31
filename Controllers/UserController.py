@@ -10,17 +10,13 @@ class UserController:
         for user in self.repo:
             print(user)
 
-    def change_lname(self):
-        search_term = input("Search Term:")
-        user = self.repo.find_user(search_term)
-        if user is not None:
-            new_name = input("New First Name:")
-            user.update_lname(new_name)
-            print("Name changed")
+    def change_lname(self, user, new_name):
+        user.update_lname(new_name)
+        print("Name changed")
 
-    def delete_user(self):
-        search_term = input("Search Term:")
-        user = self.repo.find_user(search_term)
-        if user is not None:
-            self.repo.delete_user(user)
-            print(str(user) + " DELETED")
+    def find_user(self, search_term):
+        return self.repo.find_user(search_term)
+
+    def delete_user(self, user):
+        self.repo.delete_user(user)
+        print(str(user) + " DELETED")

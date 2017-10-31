@@ -9,7 +9,7 @@ class UI:
 2 - Add Movie
 3 - Show Users
 4 - Show Movies
-5 - Update First Name
+5 - Update Last Name
 6 - Delete User
 Option:
     """.strip()
@@ -26,6 +26,24 @@ Option:
         l_name = input("Last Name:")
         user = User(f_name, l_name)
         return user
+
+    def change_lname(self):
+        search_term = input("Search Term:")
+        user = self.user_c.find_user(search_term)
+        if user is not None:
+            new_name = input("New First Name:")
+            user = self.user_c.change_lname(user, new_name)
+
+    def delete_user(self):
+        search_term = input("Search Term:")
+        user = self.user_c.find_user(search_term)
+        if user is not None:
+            user = self.user_c.delete_user(user)
+
+        if user is not None:
+            new_name = input("New First Name:")
+            user.update_lname(new_name)
+            print("Name changed")
 
     def read_movie(self):
         title = input("Title:")
@@ -53,6 +71,6 @@ Option:
             if op == 4:
                 self.movie_c.print_movies()
             if op == 5:
-                self.user_c.change_lname()
+                self.change_lname()
             if op == 6:
-                self.user_c.delete_user()
+                self.delete_user()
