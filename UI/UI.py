@@ -40,11 +40,6 @@ Option:
         if user is not None:
             user = self.user_c.delete_user(user)
 
-        if user is not None:
-            new_name = input("New First Name:")
-            user.update_lname(new_name)
-            print("Name changed")
-
     def read_movie(self):
         title = input("Title:")
         year = int(input("Year:"))
