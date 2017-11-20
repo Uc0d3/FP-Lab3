@@ -18,10 +18,7 @@ class UserController:
         return self.repo.find_user(search_term)
 
     def get_users_with_orders(self):
-        found_users = []
-        for user in self.repo:
-            if len(user.orders) > 0:
-                found_users.append(user)
+        found_users = [user for user in self.repo if user.orders]
         return found_users
 
     def delete_user(self, user):
