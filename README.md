@@ -26,4 +26,4 @@
 
 ####Legend:
 ###[ ] - Not Done
-###[ ] - Done
+###[x] - Done
