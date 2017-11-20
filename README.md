@@ -23,3 +23,7 @@
 * Anzeige die Liste von Benutzer mit aktuelle Bestellungen [x]
 * Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5) [x]
 * Anzeige alle Filme, wo einer Schauspieler gespielt hat. (zum Beispiel, alle Filme wo Adam Sandler gespielt hat).  [x]
+
+####Legend:
+###[ ] - Not Done
+###[ ] - Done
