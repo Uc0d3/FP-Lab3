@@ -11,15 +11,15 @@
 #### Die Anwendung sollte folgende Szenarien erreichen:
 
 ## Menu Benutzer:
-* Fügen ein Benutzer hin; *
-* Aktualisierung des Nachname einer Benutzer; *
-* Löschung von einer Benutzer; *
+* Fügen ein Benutzer hin; [x]
+* Aktualisierung des Nachname einer Benutzer; [x]
+* Löschung von einer Benutzer; [x]
 ## Menu Filme:
-* Fügen ein Film hin; *
-* Preis Aktualisierung einer Film; *
-* Anzeige die Liste von Filme; *
+* Fügen ein Film hin; [x]
+* Preis Aktualisierung einer Film; [x]
+* Anzeige die Liste von Filme; [x]
 ## Gemeinsames Menu:
-* Bestellung Option und Anzeige den endgültigen Preis von einer Bestellung;
-* Anzeige die Liste von Benutzer mit aktuelle Bestellungen *
-* Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5) *
-* Anzeige alle Filme, wo einer Schauspieler gespielt hat. (zum Beispiel, alle Filme wo Adam Sandler gespielt hat). *
+* Bestellung Option und Anzeige den endgültigen Preis von einer Bestellung; [ ]
+* Anzeige die Liste von Benutzer mit aktuelle Bestellungen [x]
+* Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5) [x]
+* Anzeige alle Filme, wo einer Schauspieler gespielt hat. (zum Beispiel, alle Filme wo Adam Sandler gespielt hat).  [x]
