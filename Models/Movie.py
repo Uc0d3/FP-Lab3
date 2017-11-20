@@ -1,6 +1,7 @@
 class Movie:
 
     id = 0
+    actors = []
 
     def __init__(self, title, year, rating, price, actors):
         self.title = title

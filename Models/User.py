@@ -1,7 +1,7 @@
 class User:
 
-    orders = []
     id = 0
+    orders = []
 
     def __init__(self, f_name, l_name):
         self.f_name = f_name

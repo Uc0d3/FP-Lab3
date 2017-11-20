@@ -21,5 +21,5 @@
 ## Gemeinsames Menu:
 * Bestellung Option und Anzeige den endgültigen Preis von einer Bestellung;
 * Anzeige die Liste von Benutzer mit aktuelle Bestellungen *
-* Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5)
+* Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5) *
 * Anzeige alle Filme, wo einer Schauspieler gespielt hat. (zum Beispiel, alle Filme wo Adam Sandler gespielt hat).

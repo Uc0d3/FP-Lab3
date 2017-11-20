@@ -55,7 +55,7 @@ class MovieRepository:
                 rating = float(data[2].strip())
                 price = float(data[3].strip())
                 actors = data[4].strip().split(":")
-                actors = map(str.strip, actors)
+                actors = list(map(str.strip, actors))
                 new_movie = Movie(title, year, rating, price, actors)
                 self.add_movie(new_movie)
             except IndexError as e:

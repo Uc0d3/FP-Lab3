@@ -13,6 +13,7 @@ class UI:
 6 - Delete User
 7 - Update Movie Price
 9 - Show Users with orders
+10 - Filter Movie by Rating
 Option:
     """.strip()
 
@@ -55,6 +56,12 @@ Option:
         for user in users:
             print(str(user))
 
+    def filter_movies_by_rating(self):
+        rating = float(input("Rating:"))
+        filtered_movies = self.movie_c.filter_by_rating(rating)
+        for movie in filtered_movies:
+            print(str(movie))
+
     def read_movie(self):
         title = input("Title:")
         year = int(input("Year:"))
@@ -63,7 +70,7 @@ Option:
         actors = input("Actors (comma separated):")
         actors = actors.strip()
         actors = actors.split(",")
-        actors = map(str.strip, actors)
+        actors = list(map(str.strip, actors))
         movie = Movie(title, year, rating, price, actors)
         return movie
 
@@ -88,3 +95,5 @@ Option:
                 self.change_movie_price()
             if op == 9:
                 self.show_users_with_orders()
+            if op == 10:
+                self.filter_movies_by_rating()

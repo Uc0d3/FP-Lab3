@@ -12,6 +12,10 @@ class MovieController:
     def update_price(self, movie, new_price):
         movie.update_price(new_price)
 
+    def filter_by_rating(self, rating):
+        found_movies = [movie for movie in self.repo if movie.rating > rating]
+        return found_movies
+
     def print_movies(self):
         for movie in self.repo:
             print(movie)
