@@ -11,5 +11,6 @@ user_controller = UserController(user_repo)
 movie_controller = MovieController(movie_repo)
 
 user_repo.load_from_file("users.csv")
+movie_repo.load_from_file("movies.csv")
 ui = UI(user_controller, movie_controller)
 ui.start()

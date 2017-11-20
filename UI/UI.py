@@ -11,6 +11,7 @@ class UI:
 4 - Show Movies
 5 - Update Last Name
 6 - Delete User
+7 - Update Movie Price
 Option:
     """.strip()
 
@@ -38,7 +39,15 @@ Option:
         search_term = input("Search Term:")
         user = self.user_c.find_user(search_term)
         if user is not None:
-            user = self.user_c.delete_user(user)
+            self.user_c.delete_user(user)
+
+    def change_movie_price(self):
+        search_term = input("Search Term:")
+        movie = self.movie_c.find_movie(search_term)
+        if movie is not None:
+            new_price = float(input("New Price"))
+            self.movie_c.update_price(movie, new_price)
+            print("Price for %d changed to %f" % (movie.id, new_price))
 
     def read_movie(self):
         title = input("Title:")
@@ -69,3 +78,5 @@ Option:
                 self.change_lname()
             if op == 6:
                 self.delete_user()
+            if op == 7:
+                self.change_movie_price()

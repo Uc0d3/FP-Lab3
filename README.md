@@ -11,13 +11,13 @@
 #### Die Anwendung sollte folgende Szenarien erreichen:
 
 ## Menu Benutzer:
-* Fügen ein Benutzer hin;
-* Aktualisierung des Nachname einer Benutzer;
-* Löschung von einer Benutzer;
+* Fügen ein Benutzer hin; *
+* Aktualisierung des Nachname einer Benutzer; *
+* Löschung von einer Benutzer; *
 ## Menu Filme:
-* Fügen ein Film hin;
-* Preis Aktualisierung einer Film;
-* Anzeige die Liste von Filme;
+* Fügen ein Film hin; *
+* Preis Aktualisierung einer Film; *
+* Anzeige die Liste von Filme; *
 ## Gemeinsames Menu:
 * Bestellung Option und Anzeige den endgültigen Preis von einer Bestellung;
 * Anzeige die Liste von Benutzer mit aktuelle Bestellungen

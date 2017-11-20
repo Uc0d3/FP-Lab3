@@ -1,3 +1,6 @@
+from Models.Movie import Movie
+
+
 class MovieRepository:
 
     movies = []
@@ -15,6 +18,49 @@ class MovieRepository:
         for movie in self.movies:
             if movie.id == id:
                 return movie
+
+    def find_movie(self, term, key=None):
+        found = []
+        for movie in self.movies:
+            if key is not None:
+                if term.lower() in str(getattr(movie, key)).lower():
+                    found.append(movie)
+            else:
+                members = [attr for attr in dir(movie) if not callable(getattr(movie, attr)) and not attr.startswith("__")]
+                for member in members:
+                    movie_prop = str(getattr(movie, member)).lower()
+                    if term.lower() in movie_prop:
+                        found.append(movie)
+                        break
+        if len(found) == 0:
+            print("No Movie Found")
+            return None
+        if len(found) == 1:
+            movie = found[0]
+            print("Found Movies:" + str(movie))
+            return movie
+        print("Multiple Movies Found:")
+        for f_movie in found:
+            print(f_movie)
+        id = int(input("Please choose an id from the list above:"))
+        return(self.get_by_id(id))
+
+    def load_from_file(self, file_name):
+        f = open(file_name)
+        for line in f:
+            try:
+                data = line.split(",")
+                title = data[0].strip()
+                year = int(data[1].strip())
+                rating = float(data[2].strip())
+                price = float(data[3].strip())
+                actors = data[4].strip().split(":")
+                actors = map(str.strip, actors)
+                new_movie = Movie(title, year, rating, price, actors)
+                self.add_movie(new_movie)
+            except IndexError as e:
+                print("Corrupted user read, skipped " + str(e))
+        print("Movies loaded from file")
 
     def __iter__(self):
         for movie in self.movies:

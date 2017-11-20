@@ -32,7 +32,7 @@ class UserRepository:
                 new_user.orders = orders
                 self.add_user(new_user)
             except IndexError as e:
-                print("Corrupted user read, skipped")
+                print("Corrupted user read, skipped " + str(e))
         print("Users loaded from file")
 
     def find_user(self, term, key=None):
@@ -55,7 +55,7 @@ class UserRepository:
             user = found[0]
             print("Found User:" + str(user))
             return user
-        print("Multiple user Found:")
+        print("Multiple Users Found:")
         for f_user in found:
             print(f_user)
         id = int(input("Please choose an id from the list above:"))
