@@ -12,6 +12,7 @@ class UI:
 5 - Update Last Name
 6 - Delete User
 7 - Update Movie Price
+9 - Show Users with orders
 Option:
     """.strip()
 
@@ -49,6 +50,11 @@ Option:
             self.movie_c.update_price(movie, new_price)
             print("Price for %d changed to %f" % (movie.id, new_price))
 
+    def show_users_with_orders(self):
+        users = self.user_c.get_users_with_orders()
+        for user in users:
+            print(str(user))
+
     def read_movie(self):
         title = input("Title:")
         year = int(input("Year:"))
@@ -80,3 +86,5 @@ Option:
                 self.delete_user()
             if op == 7:
                 self.change_movie_price()
+            if op == 9:
+                self.show_users_with_orders()

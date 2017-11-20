@@ -27,9 +27,11 @@ class UserRepository:
                 data = line.split(",")
                 f_name = data[0].strip()
                 l_name = data[1].strip()
-                orders = data[2].strip().split(":")
+                orders = data[2].strip()
                 new_user = User(f_name, l_name)
-                new_user.orders = orders
+                if orders:
+                    orders = orders.split(":")
+                    new_user.orders = orders
                 self.add_user(new_user)
             except IndexError as e:
                 print("Corrupted user read, skipped " + str(e))
