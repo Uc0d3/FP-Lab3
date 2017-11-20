@@ -14,6 +14,7 @@ class UI:
 7 - Update Movie Price
 9 - Show Users with orders
 10 - Filter Movie by Rating
+11 - Show Movies with the given actor
 Option:
     """.strip()
 
@@ -62,6 +63,15 @@ Option:
         for movie in filtered_movies:
             print(str(movie))
 
+    def show_movies_with_actor(self):
+        actor = input("Actor:")
+        movies = self.movie_c.get_movies_with_actor(actor)
+        if movies:
+            for movie in movies:
+                print(movie)
+        else:
+            print("No Movies with %s found" % actor)
+
     def read_movie(self):
         title = input("Title:")
         year = int(input("Year:"))
@@ -97,3 +107,5 @@ Option:
                 self.show_users_with_orders()
             if op == 10:
                 self.filter_movies_by_rating()
+            if op == 11:
+                self.show_movies_with_actor()

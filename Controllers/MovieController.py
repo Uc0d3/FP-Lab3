@@ -16,6 +16,13 @@ class MovieController:
         found_movies = [movie for movie in self.repo if movie.rating > rating]
         return found_movies
 
+    def get_movies_with_actor(self, actor):
+        found_movies = []
+        for movie in self.repo:
+            if actor.lower() in list(map(str.lower, movie.actors)):
+                found_movies.append(movie)
+        return found_movies
+
     def print_movies(self):
         for movie in self.repo:
             print(movie)
