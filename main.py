@@ -2,7 +2,6 @@ from Repository.UserRepository import UserRepository
 from Repository.MovieRepository import MovieRepository
 from Controllers.UserController import UserController
 from Controllers.MovieController import MovieController
-
 from UI.UI import UI
 
 user_repo = UserRepository()

@@ -19,7 +19,7 @@ class MovieRepository:
             if movie.id == id:
                 return movie
 
-    def find_movie(self, term, key=None):
+    def find_movie(self, term, key=None, silent=False):
         found = []
         for movie in self.movies:
             if key is not None:
@@ -33,16 +33,21 @@ class MovieRepository:
                         found.append(movie)
                         break
         if len(found) == 0:
-            print("No Movie Found")
+            if not silent:
+                print("No Movie Found")
             return None
         if len(found) == 1:
             movie = found[0]
-            print("Found Movies:" + str(movie))
+            if not silent:
+                print("Found Movies:" + str(movie))
             return movie
-        print("Multiple Movies Found:")
+        if not silent:
+            print("Multiple Movies Found:")
         for f_movie in found:
-            print(f_movie)
-        id = int(input("Please choose an id from the list above:"))
+            if not silent:
+                print(f_movie)
+        if not silent:
+            id = int(input("Please choose an id from the list above:"))
         return(self.get_by_id(id))
 
     def load_from_file(self, file_name):

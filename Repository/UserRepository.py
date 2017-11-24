@@ -38,7 +38,7 @@ class UserRepository:
                 print("Corrupted user read, skipped " + str(e))
         print("Users loaded from file")
 
-    def find_user(self, term, key=None):
+    def find_user(self, term, key=None, silent=False):
         found = []
         for user in self.users:
             if key is not None:
@@ -52,16 +52,21 @@ class UserRepository:
                         found.append(user)
                         break
         if len(found) == 0:
-            print("No User Found")
+            if not silent:
+                print("No User Found")
             return None
         if len(found) == 1:
             user = found[0]
-            print("Found User:" + str(user))
+            if not silent:
+                print("Found User:" + str(user))
             return user
-        print("Multiple Users Found:")
+        if not silent:
+            print("Multiple Users Found:")
         for f_user in found:
-            print(f_user)
-        id = int(input("Please choose an id from the list above:"))
+            if not silent:
+                print(f_user)
+        if not silent:
+            id = int(input("Please choose an id from the list above:"))
         return(self.get_by_id(id))
 
     def __iter__(self):

@@ -6,8 +6,8 @@ class MovieController:
     def add_movie(self, movie):
         self.repo.add_movie(movie)
 
-    def find_movie(self, search_term):
-        return self.repo.find_movie(search_term)
+    def find_movie(self, search_term, key=None, silent=False):
+        return self.repo.find_movie(search_term, key, silent)
 
     def update_price(self, movie, new_price):
         movie.update_price(new_price)
