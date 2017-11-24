@@ -90,8 +90,7 @@ Option:
             print("Order price:" + str(order_price))
             print("Y - Confirm\nN - Cancel\nInput:")
             if input() == "Y":
-                for order in orders:
-                    user.add_order(order.id)
+                self.user_c.add_orders(user, orders)
                 print("Order added to user " + user.f_name)
             else:
                 print("Order cancaled")

@@ -14,6 +14,10 @@ class UserController:
         user.update_lname(new_name)
         print("Name changed")
 
+    def add_orders(self, user, orders):
+        for order in orders:
+            user.add_order(order.id)
+
     def find_user(self, search_term):
         return self.repo.find_user(search_term)
 

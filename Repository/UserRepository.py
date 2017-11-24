@@ -32,7 +32,6 @@ class UserRepository:
                 if orders:
                     orders = orders.split(":")
                     orders = list(map(int, orders))
-                    print(orders)
                     new_user.orders = orders
                 self.add_user(new_user)
             except IndexError as e:
