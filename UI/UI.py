@@ -12,6 +12,7 @@ class UI:
 5 - Update Last Name
 6 - Delete User
 7 - Update Movie Price
+8 - Order Movies
 9 - Show Users with orders
 10 - Filter Movie by Rating
 11 - Show Movies with the given actor
@@ -72,6 +73,29 @@ Option:
         else:
             print("No Movies with %s found" % actor)
 
+    def make_order(self):
+        search_term = input("User Search Term:")
+        user = self.user_c.find_user(search_term)
+        if user is not None:
+            print("Finish order by typing done")
+            orders = []
+            search_term = input("Movie Search Term:")
+            while("done" not in search_term.lower()):
+                movie = self.movie_c.find_movie(search_term)
+                if movie is not None:
+                    orders.append(movie)
+                    print(str(movie) + " added to cart")
+                search_term = input("Movie Search Term:")
+            order_price = sum(order.price for order in orders)
+            print("Order price:" + str(order_price))
+            print("Y - Confirm\nN - Cancel\nInput:")
+            if input() == "Y":
+                for order in orders:
+                    user.add_order(order.id)
+                print("Order added to user " + user.f_name)
+            else:
+                print("Order cancaled")
+
     def read_movie(self):
         title = input("Title:")
         year = int(input("Year:"))
@@ -103,6 +127,8 @@ Option:
                 self.delete_user()
             if op == 7:
                 self.change_movie_price()
+            if op == 8:
+                self.make_order()
             if op == 9:
                 self.show_users_with_orders()
             if op == 10:

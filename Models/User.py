@@ -18,4 +18,5 @@ class User:
 
     def __str__(self):
         string = "Id:%d\tFirst Name:%s\tLast Name:%s\tOrders:%s"
-        return string % (self.id, self.f_name, self.l_name, ", ".join(self.orders))
+        orders = list(map(str, self.orders))
+        return string % (self.id, self.f_name, self.l_name, ", ".join(orders))
