@@ -5,6 +5,10 @@ class MovieRepository:
 
     movies = []
     last_id = 0
+    file_name = "movies.csv"
+
+    def __init__(self, file_name):
+        self.file_name = file_name
 
     def add_movie(self, movie):
         movie.set_id(self.last_id + 1)
@@ -50,8 +54,8 @@ class MovieRepository:
             id = int(input("Please choose an id from the list above:"))
         return(self.get_by_id(id))
 
-    def load_from_file(self, file_name):
-        f = open(file_name)
+    def load_from_file(self):
+        f = open(self.file_name)
         for line in f:
             try:
                 data = line.split(",")
@@ -66,6 +70,13 @@ class MovieRepository:
             except IndexError as e:
                 print("Corrupted user read, skipped " + str(e))
         print("Movies loaded from file")
+
+    def save_to_file(self):
+        f = open(self.file_name, "w")
+        for movie in self.movies:
+            csv = "%s,%d,%f,%f,%s\n"
+            csv = csv % (movie.title, movie.year, movie.rating, movie.price, ":".join(movie.actors))
+            f.write(csv)
 
     def __iter__(self):
         for movie in self.movies:

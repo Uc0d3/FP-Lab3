@@ -5,6 +5,10 @@ class UserRepository:
 
     users = []
     last_id = 0
+    file_name = "users.csv"
+
+    def __init__(self, file_name):
+        self.file_name = file_name
 
     def add_user(self, user):
         user.set_id(self.last_id + 1)
@@ -20,8 +24,8 @@ class UserRepository:
                 return user
         print("Invalid ID")
 
-    def load_from_file(self, file_name):
-        f = open(file_name)
+    def load_from_file(self):
+        f = open(self.file_name)
         for line in f:
             try:
                 data = line.split(",")
@@ -37,6 +41,7 @@ class UserRepository:
             except IndexError as e:
                 print("Corrupted user read, skipped " + str(e))
         print("Users loaded from file")
+        f.close()
 
     def find_user(self, term, key=None, silent=False):
         found = []
@@ -68,6 +73,15 @@ class UserRepository:
         if not silent:
             id = int(input("Please choose an id from the list above:"))
         return(self.get_by_id(id))
+
+    def save_to_file(self):
+        f = open(self.file_name, "w")
+        for user in self.users:
+            csv = "%s,%s,%s\n"
+            orders = list(map(str, user.orders))
+            csv = csv % (user.f_name, user.l_name, ":".join(orders))
+            f.write(csv)
+        f.close()
 
     def __iter__(self):
         for user in self.users:

@@ -8,13 +8,13 @@ from Controllers.UserController import UserController
 from Controllers.MovieController import MovieController
 
 
-user_repo = UserRepository()
-movie_repo = MovieRepository()
+user_repo = UserRepository("users_test_data.csv")
+movie_repo = MovieRepository("movies_test_data.csv")
 user_controller = UserController(user_repo)
 movie_controller = MovieController(movie_repo)
 
-user_repo.load_from_file("users_test_data.csv")
-movie_repo.load_from_file("movies_test_data.csv")
+user_repo.load_from_file()
+movie_repo.load_from_file()
 
 
 def update_price_test():

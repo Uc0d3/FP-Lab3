@@ -17,6 +17,6 @@ class Movie:
         self.price = new_price
 
     def __str__(self):
-        string = "Id:%d\tName:%s\tYear:%d\tRating:%f\tPrice:%f\nActors:\n%s\n"
+        string = "Id:%d\tName:%s\tYear:%d\tRating:%.1f\tPrice:%.1f\nActors:\n%s\n"
         string += "*--------------------------------------------------------------*"
         return string % (self.id, self.title, self.year, self.rating, self.price, "\n".join(self.actors))
