@@ -44,4 +44,5 @@ def run_movie_tests():
     filter_by_rating_test()
     get_movies_with_actor_test()
 
+
 run_movie_tests()
