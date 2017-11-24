@@ -19,10 +19,14 @@
 - [x] Preis Aktualisierung einer Film
 - [x] Anzeige die Liste von Filme
 ## Gemeinsames Menu:
-- [ ] Bestellung Option und Anzeige den endgültigen Preis von einer Bestellung
+- [x] Bestellung Option und Anzeige den endgültigen Preis von einer Bestellung
 - [x] Anzeige die Liste von Benutzer mit aktuelle Bestellungen
 - [x] Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5)
 - [x] Anzeige alle Filme, wo einer Schauspieler gespielt hat. (zum Beispiel, alle Filme wo Adam Sandler gespielt hat)
+
+## Unit Tests
+- [x] User Tests
+- [x] Movie Tests
 
 #### Legend:
 - [ ] - Not Done
