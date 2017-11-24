@@ -24,9 +24,12 @@
 - [x] Suche nach Filme, die eine Wertung größer als ein eingegebenes Wert haben. (zum Beispiel, Filmen mit Wertung > 6.5)
 - [x] Anzeige alle Filme, wo einer Schauspieler gespielt hat. (zum Beispiel, alle Filme wo Adam Sandler gespielt hat)
 
-## Unit Tests
+## Unit Tests:
 - [x] User Tests
 - [x] Movie Tests
+
+## Technisches Sicht:
+- [ ] Documentation
 
 #### Legend:
 - [ ] - Not Done
